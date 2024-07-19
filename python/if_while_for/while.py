@@ -70,5 +70,9 @@ while a < 10 :
     if a % 2 ==0 : continue
     print(a)
 
-# 무한 루프
+# 무한 루프 / 빠져나가는 법 ctrl + c
+a = 0
+while True :
+    a += 1
+    print(a)
 
