@@ -111,4 +111,44 @@ f.close()
 
 # read 함수 사용하기
 # read.py
+f = open("C:/Users/SAN-CAD5/Documents/vs/새파일.txt", 'r')
+data = f.read()
+print(data)
+f.close
+
+# 파일 객체를 for 문과 함께 사용하기
+# read_for.py
+f = open("C:/Users/SAN-CAD5/Documents/vs/새파일.txt", 'r')
+for line in f :
+    print(line)
+f.close
+
+# 파일에 새로운 내용 추가하기
+# 쓰기 모드('w')로 파일을 열 때 이미 존재하는 파일을 열면 그 파일의 내용이 모두
+# 사라지게 된다. 하지만 원래 있던 값을 유지하면서 단지 새로운 값만 추가해야 할
+# 경우도 있다. 이런 경우에는 파일을 추가 모드('a')로 열면 된다.
+
+# add_data.py
+f = open("C:/Users/SAN-CAD5/Documents/vs/새파일.txt", 'a')
+for i in range(11,20):
+    data = "%d번째 줄이다.\n" % i
+    f.write(data)
+f.close()
+
+# with 문과 함께 사용하기
+"""
+지금까지 살펴본 예제를 보면 항상 다음과 같은 방식으로 파일을 열고 닫은 것을 알 수 있다.
+
+f = open("foo.txt",'w')
+f.write("Life is too short, you need python")
+f.close()
+
+파일을 열면(open) 항상 닫아(close) 주어야 한다. 이렇게 파일을 열고 닫는 것을 자동으로
+처리할 수 있다면 편리할것이다. 파이썬의 with문이 이런 역할을 해준다.
+다음 예는 with 문을 사용해서 위 예제를 다시 작성한 모습이다.
+
+# file_with.py
+with open("foo.txt", 'w') as f :
+    f.write("Life is too short, you need python")
+"""
 
