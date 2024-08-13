@@ -1,0 +1,18 @@
+__init__.py의 용도
+__init__.py 파일은 해당 디렉터리가 패키지의 일부임을 알려 주는 역할을 한다. 만약 game, sound,
+graphic 등 패키지에 포함된 디렉터리에 __init__.py 파일이 없다면 패키지로 인식되지 않는다.
+
+또한, __init__.py 파일은 패키지와 관련된 설정이나 초기화 코드를 포함할 수 있다.
+다양한 방법으로 활용할 수 있는데, 몇가지 예를 들어 살펴보자
+
+    # 다음에 나오는 예제는 __init__.py 파일을 수정한 후 반드시 파이썬 인터프리터를 종료하고 
+      다시 실행해야 한다.
+
+from game.sound.echo import echo_test를 
+from ..sound.echo import echo_test로 수정
+.. 은 render.py 파일의 부모 디렉터리를 의미. 따라서 render.py 파일의 부모 디렉터리는
+game 이므로 위와 같이 import가 가능
+
+접근자      설명
+..      부모 디렉터리
+.       현재 디렉터리
